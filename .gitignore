@@ -1,0 +1,7 @@
+build
+lib
+conf/database.properties
+.gradle
+gradle
+*.iml
+.idea

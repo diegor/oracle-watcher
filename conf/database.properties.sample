@@ -1,0 +1,27 @@
+#Database name
+name=My Database
+#Database URL
+database.jdbcUrl=jdbc:oracle:thin:@<host>:<port>/<sid>
+#Database system user
+database.systemUser=system
+#Database system password
+database.systemPassword=password
+#Optional: Database user to watch
+database.user=
+#interval in minutes to run query
+interval=2
+#Minimum locking time in minutes to reports a lock
+waitingTime=5
+#notifiers
+notifiers=console  #valido options console mail
+
+### Mail Properties
+#mail.smtp.host=smtp.yourdamin.com
+#mail.smtp.port=443
+#mail.smtp.auth=yes
+#mail.smtp.starttls.required=true
+#mail.smtp.starttls.enable=true
+#mail.transport.protocol=smtp
+#mail.smtp.user=user
+#mail.password=password
+

@@ -1,0 +1,12 @@
+apply plugin: 'java'
+apply plugin: 'application'
+mainClassName = "tekgenesis.oracle.watcher.App"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    runtime files('lib/ojdbc7.jar')
+    compile 'javax.mail:mail:1.4.7'
+}
