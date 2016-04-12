@@ -38,6 +38,7 @@ public class App {
     private String password = null;
     private String user = "";
     private int waitingTime = 5;
+    private boolean locksFound = false;
     private final List<Notifier> notifierList = new ArrayList<>();
     private StringBuffer notification = new StringBuffer();
 
@@ -161,6 +162,11 @@ public class App {
     private void analyzeSessions(HashMap<Integer, Session> sessions) {
         final Stream<Session> blockedSessions = sessions.values().stream().filter(s -> s.blockedBy != null && s.runningFor >= waitingTime).sorted();
         blockedSessions.forEach(s -> notify(lock(s, sessions.get(s.blockedBy))));
+        if(notification.length() == 0 && locksFound) {
+            notify("Locks have been cleared");
+            locksFound = false;
+        }
+        else if (notification.length() > 0) locksFound = true;
         flush();
     }
 
